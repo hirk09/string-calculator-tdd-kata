@@ -21,3 +21,9 @@
     padding-bottom: 10px;
     border-bottom: 1px solid;
 }
+
+.input-field{
+    width: calc(100% - 36px);
+    height: 30px;
+    margin: 10px 15px;
+}
