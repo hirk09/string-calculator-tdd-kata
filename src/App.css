@@ -45,3 +45,7 @@ form {
     color: #fff;
   }
 }
+
+.error{
+    color: rgb(157, 41, 41);
+}

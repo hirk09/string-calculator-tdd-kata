@@ -3,8 +3,13 @@ import './App.css';
 
 function App() {
   const [text, setText] = useState(''); // Storing input data
+  const [value, setValue] = useState(null);
+  const [error, setError] = useState('');
 
-  const handleSubmit = () => {} // Handle value after submiting input text
+  const handleSubmit = event => {   // Handle value after submiting input text
+    event.preventDefault();
+    setError('');
+  } 
 
   return (
     <div className="app">
@@ -14,11 +19,13 @@ function App() {
         <div className='form-field'>
                 <input
                     value={text}
-                    onChange={(e) => setText(e.target.value)}
+                    onChange={e => setText(e.target.value.trim())}
                     rows="4"
                     className='input-field'
                     placeholder="Enter number here"
                     />
+                    {value && <div>data: {value}</div>}
+                    {error && <div className='error'>{error}</div>}
                     </div>
                 <div className='btn'>
                 <button type="submit">Submit</button>
